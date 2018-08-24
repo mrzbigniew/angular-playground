@@ -1,8 +1,11 @@
+import { DashboardModule } from './dashboard/dashboard.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { UserModule } from './user/user.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LoginModule } from './login/login.module';
 
 @NgModule({
   declarations: [
@@ -10,9 +13,10 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    UserModule,
+    DashboardModule,
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

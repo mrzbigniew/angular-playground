@@ -1,0 +1,9 @@
+<form [formGroup]="form" class="login-form">
+  <mat-form-field>
+    <input matInput placeholder="{{'LBL_LOGIN'}}" formControlName="login" class="login-form__login">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="password" placeholder="{{'LBL_PASSWORD'}}" value="password" class="login-form__password">
+  </mat-form-field>
+  <button mat-button>login</button>
+</form>

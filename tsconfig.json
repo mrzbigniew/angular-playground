@@ -22,6 +22,18 @@
       ],
       "api/*": [
         "dist/api/*"
+      ],
+      "forms": [
+        "dist/forms"
+      ],
+      "forms/*": [
+        "dist/forms/*"
+      ],
+      "lib": [
+        "dist/lib"
+      ],
+      "lib/*": [
+        "dist/lib/*"
       ]
     }
   }
