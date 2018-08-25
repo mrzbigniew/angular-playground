@@ -1,0 +1,10 @@
+<div class="lngs">
+  <button *ngFor="let ln of langList" 
+           mat-raised-button
+           color="link" 
+           [disabled]="currentLang === ln"
+           (click)="changeLanguage(ln)"
+  >
+    {{ln}}
+  </button>
+</div>

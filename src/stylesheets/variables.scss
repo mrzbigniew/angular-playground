@@ -1,1 +1,14 @@
+@import '~bootstrap/scss/bootstrap';
+
 $toolbar-z-index: 100;
+
+$modal-xl: 1200px;
+$modal-lg:  900px;
+$modal-md:  500px;
+$modal-sm:  350px;
+
+$screen-breakpoint-xs: #{map-get($grid-breakpoints, xs)};
+$screen-breakpoint-sm: #{map-get($grid-breakpoints, sm)};
+$screen-breakpoint-md: #{map-get($grid-breakpoints, md)};
+$screen-breakpoint-lg: #{map-get($grid-breakpoints, lg)};
+$screen-breakpoint-xl: #{map-get($grid-breakpoints, xl)};

@@ -1,0 +1,22 @@
+:host {
+  .login {
+    background: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    &-form {
+      max-width: 40rem;
+      min-width: 20rem;
+      width: 50vw;
+    }
+  }
+
+  .language-selector {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    top: 0;
+  }
+}

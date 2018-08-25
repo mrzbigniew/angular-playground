@@ -1,0 +1,51 @@
+@import 'variables';
+
+:host {
+  .onb {
+    &__window {
+      display: flex;
+      flex-direction: column;
+      align-content: stretch;
+    }
+  }
+}
+
+@media only screen and (min-width: $screen-breakpoint-xs) {
+  :host {
+    .onb {
+      &__window {
+        min-height: 700px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $screen-breakpoint-md) {
+  :host {
+    .onb {
+      &__window {
+        min-height: 700px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $screen-breakpoint-lg) {
+  :host {
+    .onb {
+      &__window {
+        min-height: 460px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $screen-breakpoint-xl) {
+  :host {
+    .onb {
+      &__window {
+        min-height: 460px;
+      }
+    }
+  }
+}

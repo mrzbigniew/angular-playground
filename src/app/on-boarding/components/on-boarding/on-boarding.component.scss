@@ -1,0 +1,86 @@
+@import 'variables';
+
+::ng-deep {
+  .onb__modal_window {
+    &.modal {
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+      .modal-dialog {
+        &, &.modal-lg {
+          
+        }
+        .modal-content {
+          border: 0;
+          border-radius: 0;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $screen-breakpoint-xs) {
+  ::ng-deep {
+    .onb__modal_window {
+      &.modal {
+        .modal-dialog {
+          &, &.modal-lg {
+            min-width: $modal-sm;
+            max-width: $modal-sm;
+            width: $modal-sm;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $screen-breakpoint-md) {
+  ::ng-deep {
+    .onb__modal_window {
+      &.modal {
+        .modal-dialog {
+          &, &.modal-lg {
+            min-width: $modal-md;
+            max-width: $modal-md;
+            width: $modal-md;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $screen-breakpoint-lg) {
+  ::ng-deep {
+    .onb__modal_window {
+      &.modal {
+        .modal-dialog {
+          &, &.modal-lg {
+            min-width: $modal-lg;
+            max-width: $modal-lg;
+            width: $modal-lg;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $screen-breakpoint-xl) {
+  ::ng-deep {
+    .onb__modal_window {
+      &.modal {
+        .modal-dialog {
+          &, &.modal-lg {
+            min-width: $modal-xl;
+            max-width: $modal-xl;
+            width: $modal-xl;
+          }
+        }
+      }
+    }
+  }
+}

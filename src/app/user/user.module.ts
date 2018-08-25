@@ -1,6 +1,7 @@
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { LoginFormModule } from './login-form/login-form.module';
 import { RegisterFormModule } from './register-form/register-form.module';
@@ -9,7 +10,7 @@ import { RegisterFormModule } from './register-form/register-form.module';
   imports: [
     CommonModule,
     LoginFormModule,
-    RegisterFormModule,
+    RegisterFormModule
   ],
   exports: [
     LoginFormModule,
