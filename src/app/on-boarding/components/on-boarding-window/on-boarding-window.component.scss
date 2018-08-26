@@ -6,6 +6,10 @@
       display: flex;
       flex-direction: column;
       align-content: stretch;
+      position: relative;
+      &_footer {
+        
+      }
     }
   }
 }
@@ -15,6 +19,11 @@
     .onb {
       &__window {
         min-height: 700px;
+        &_content {
+          min-height: 680px;
+          height: 680px;
+          overflow-y: auto;
+        }
       }
     }
   }
@@ -25,6 +34,11 @@
     .onb {
       &__window {
         min-height: 700px;
+        &_content {
+          min-height: 680px;
+          height: 680px;
+          overflow-y: auto;
+        }
       }
     }
   }
@@ -34,7 +48,12 @@
   :host {
     .onb {
       &__window {
-        min-height: 460px;
+        min-height: 550px;
+        &_content {
+          max-height: 530px;
+          height: 530px;
+          overflow: hidden;
+        }
       }
     }
   }
@@ -44,7 +63,12 @@
   :host {
     .onb {
       &__window {
-        min-height: 460px;
+        min-height: 550px;
+        &_content {
+          max-height: 530px;
+          height: 530px;
+          overflow: hidden;
+        }
       }
     }
   }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-on-boarding-window',
+  selector: 'onb-window',
   templateUrl: './on-boarding-window.component.html',
   styleUrls: ['./on-boarding-window.component.scss']
 })

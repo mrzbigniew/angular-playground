@@ -1,0 +1,13 @@
+<div class="onb__slider_nav" *ngIf="slidesCount > 0">
+  <div class="row">
+    <div class="col">
+      <button [hidden]="currentSlideIndex === 0" mat-raised-button color="primary" (click)="previousClick()">{{'LBL_PREVIOUS' | translate}}</button>
+      <button [hidden]="currentSlideIndex !== 0" mat-raised-button color="primary" (click)="skipClick()">{{'LBL_SKIP_FOR_NOW' | translate}}</button>
+    </div>
+    <div class="col text-right">
+      <button [hidden]="currentSlideIndex + 1 === slidesCount" mat-raised-button color="primary" (click)="nextClick()">{{'LBL_NEXT' | translate}}</button>
+      <button [hidden]="currentSlideIndex + 1 !== slidesCount" mat-raised-button color="primary" (click)="finishClick()">{{'LBL_CLOSE' | translate}}</button>
+    </div>
+  </div>
+</div>
+ 

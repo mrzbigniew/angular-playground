@@ -1,7 +1,12 @@
-<app-on-boarding-window>
-  <app-on-boarding-window-header></app-on-boarding-window-header>
-  <app-on-boarding-window-content>
-    <ng-content></ng-content>
-  </app-on-boarding-window-content>
-  <app-on-boarding-window-footer></app-on-boarding-window-footer>
-</app-on-boarding-window>
+<onb-window>
+  <onb-window-header></onb-window-header>
+  <onb-window-content>
+    <onb-slider>
+      <onb-slider-pagination></onb-slider-pagination>
+      <onb-slider-nav (close)="close()"></onb-slider-nav>
+      <onb-slide *ngFor="let cmp of componentsList">
+        <ng-container *ngComponentOutlet="cmp"></ng-container>
+      </onb-slide>
+    </onb-slider>
+  </onb-window-content>
+</onb-window>

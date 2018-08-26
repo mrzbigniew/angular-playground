@@ -1,0 +1,8 @@
+<div class="onb__pagination">
+  <ng-template #defaultItemTemplate let-data>
+    <onb-slider-pagination-item [data]="data"></onb-slider-pagination-item>
+  </ng-template>
+  <ng-container *ngFor="let item of paginationItems">
+    <ng-container *ngTemplateOutlet="itemTemplate ? itemTemplate : defaultItemTemplate; context:item"></ng-container>
+  </ng-container>
+</div>

@@ -9,12 +9,14 @@
       width: 100vw;
       height: 100vh;
       .modal-dialog {
+        margin: unset;
         &, &.modal-lg {
           
         }
         .modal-content {
           border: 0;
           border-radius: 0;
+          background-color: #FFF;
         }
       }
     }
@@ -26,6 +28,7 @@
     .onb__modal_window {
       &.modal {
         .modal-dialog {
+          margin: unset;
           &, &.modal-lg {
             min-width: $modal-sm;
             max-width: $modal-sm;
@@ -42,6 +45,7 @@
     .onb__modal_window {
       &.modal {
         .modal-dialog {
+          margin: unset;
           &, &.modal-lg {
             min-width: $modal-md;
             max-width: $modal-md;
@@ -58,6 +62,7 @@
     .onb__modal_window {
       &.modal {
         .modal-dialog {
+          margin: unset;
           &, &.modal-lg {
             min-width: $modal-lg;
             max-width: $modal-lg;
@@ -74,6 +79,7 @@
     .onb__modal_window {
       &.modal {
         .modal-dialog {
+          margin: unset;
           &, &.modal-lg {
             min-width: $modal-xl;
             max-width: $modal-xl;

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OnBoardingBackdropComponent } from './on-boarding-backdrop.component';
+import { OnBoardingSliderComponent } from './on-boarding-slider.component';
 
-describe('OnBoardingBackdropComponent', () => {
-  let component: OnBoardingBackdropComponent;
-  let fixture: ComponentFixture<OnBoardingBackdropComponent>;
+describe('OnBoardingSliderComponent', () => {
+  let component: OnBoardingSliderComponent;
+  let fixture: ComponentFixture<OnBoardingSliderComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ OnBoardingBackdropComponent ]
+      declarations: [ OnBoardingSliderComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OnBoardingBackdropComponent);
+    fixture = TestBed.createComponent(OnBoardingSliderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

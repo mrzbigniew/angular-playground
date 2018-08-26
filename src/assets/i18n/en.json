@@ -1,5 +1,9 @@
 {
   "LBL_LOGIN": "login",
   "LBL_PASSWORD": "password",
-  "LBL_APP": "app"
+  "LBL_APP": "app",
+  "LBL_PREVIOUS": "Previous",
+  "LBL_SKIP_FOR_NOW": "Skip for now",
+  "LBL_NEXT": "Next",
+  "LBL_CLOSE": "Close"
 }

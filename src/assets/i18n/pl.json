@@ -1,5 +1,9 @@
 {
   "LBL_LOGIN": "login",
   "LBL_PASSWORD": "hasło",
-  "LBL_APP": "app"
+  "LBL_APP": "app",
+  "LBL_PREVIOUS": "Poprzedni",
+  "LBL_SKIP_FOR_NOW": "Pomiń",
+  "LBL_NEXT": "Następny",
+  "LBL_CLOSE": "Zamknij"
 }
