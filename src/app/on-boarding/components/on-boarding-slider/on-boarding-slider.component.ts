@@ -63,7 +63,7 @@ export class OnBoardingSliderComponent implements OnInit, OnDestroy {
     this.unsubscribeFromSubscriptions();
   }
 
-  registerSlider(slide: OnBoardingSlideDirective) {
+  registerSlide(slide: OnBoardingSlideDirective) {
     this.sliderService.registerSlide(slide);
   }
 

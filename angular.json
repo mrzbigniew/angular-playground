@@ -23,6 +23,11 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
+              {
+                "glob": "**/*",
+                "input": "./node_modules/font-awesome/fonts",
+                "output": "src/assets/fonts"
+              },
               "src/favicon.ico",
               "src/assets"
             ],
