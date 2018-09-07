@@ -136,38 +136,38 @@
         }
       }
     },
-    "lib": {
-      "root": "projects/lib",
-      "sourceRoot": "projects/lib/src",
+    "lib-kendo-grid": {
+      "root": "projects/lib-kendo-grid",
+      "sourceRoot": "projects/lib-kendo-grid/src",
       "projectType": "library",
-      "prefix": "lib",
-      "architect": {
+      "prefix": "lkg",
+      "schematics": {
+        "@schematics/angular:component": {
+          "styleext": "scss"
+        }
+      },
+      "targets": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "projects/lib/tsconfig.lib.json",
-            "project": "projects/lib/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "project": "projects/lib/ng-package.prod.json"
-            }
+            "tsConfig": "projects/lib-kendo-grid/tsconfig.lib.json",
+            "project": "projects/lib-kendo-grid/ng-package.json"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/lib/src/test.ts",
-            "tsConfig": "projects/lib/tsconfig.spec.json",
-            "karmaConfig": "projects/lib/karma.conf.js"
+            "main": "projects/lib-kendo-grid/src/test.ts",
+            "tsConfig": "projects/lib-kendo-grid/tsconfig.spec.json",
+            "karmaConfig": "projects/lib-kendo-grid/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/lib/tsconfig.lib.json",
-              "projects/lib/tsconfig.spec.json"
+              "projects/lib-kendo-grid/tsconfig.lib.json",
+              "projects/lib-kendo-grid/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
