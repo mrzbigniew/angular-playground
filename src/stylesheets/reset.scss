@@ -4,10 +4,6 @@ html, body {
   margin: 0;
   padding: 0;
   outline: none;
-  font-family: 'Open Sans', sans-serif;
-}
-
-
-body {
-  background: #ccc;
+  font-family: $font-family;
+  background: $bg-color;
 }

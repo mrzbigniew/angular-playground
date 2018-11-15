@@ -15,6 +15,9 @@ import { CapitalizeDirective } from './directive/capitalize.directive';
   exports: [
    CapitalizePipe,
    CapitalizeDirective
+  ],
+  providers: [
+    CapitalizePipe
   ]
 })
 export class CapitalizeModule { }

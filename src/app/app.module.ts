@@ -1,52 +1,25 @@
-import { NgModule, APP_INITIALIZER, } from '@angular/core';
-// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-// import { HttpClientModule, HttpClient } from '@angular/common/http';
-// import { BrowserModule } from '@angular/platform-browser';
-// import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
+import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserModule } from '@angular/platform-browser';
 
-// import { translationInitializerFactory } from './translationInitializerFactory';
-// import { translationLoaderFactory } from './translationLoaderFactory';
+import { TranslateLoaderInitializerModule } from '@shared/initializers/translate-loader-initializer/translate-loader-initializer.module';
 
-// import { UserModule } from './user/user.module';
-// import { AppRoutingModule } from './app-routing.module';
-// import { AppComponent } from './app.component';
-// import { OnBoardingModule } from './on-boarding/on-boarding.module';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
 
 @NgModule({
   imports: [
-    // BrowserModule,
-    // BrowserAnimationsModule,
-    // AppRoutingModule,
-    // UserModule,
-    // DashboardModule,
-    // HttpClientModule,
-    // OnBoardingModule,
-    // TranslateModule.forRoot({
-    //   useDefaultLang: true,
-    //   loader: {
-    //     provide: TranslateLoader,
-    //     useFactory: translationLoaderFactory,
-    //     deps: [
-    //       HttpClient
-    //     ]
-    //   }
-    // })
+    BrowserModule,
+    BrowserAnimationsModule,
+    TranslateLoaderInitializerModule.forRoot(),
+    AppRoutingModule
   ],
-  providers: [
-    // {
-    //   provide: APP_INITIALIZER,
-    //   multi: true,
-    //   useFactory: translationInitializerFactory,
-    //   deps: [
-    //     TranslateService
-    //   ]
-    // }
-  ],
+  providers: [],
   declarations: [
-    // AppComponent
+    AppComponent
   ],
   bootstrap: [
-    // AppComponent
+    AppComponent
   ]
 })
 export class AppModule { }
