@@ -1,5 +1,6 @@
 import { TranslateService } from "@ngx-translate/core";
 import { forkJoin } from "rxjs";
+import { tap } from "rxjs/operators";
 
 export const translationInitializerFactory: (translate: TranslateService) => () => Promise<boolean> = (translateService: TranslateService) => {
   return (): Promise<boolean> => {
@@ -9,7 +10,10 @@ export const translationInitializerFactory: (translate: TranslateService) => () 
         translateService.reloadLang('en'),
         translateService.reloadLang('pl'),
         translateService.reloadLang('un')
-      ).subscribe(
+      ).pipe(
+        tap( () => translateService.setDefaultLang('en'))
+      )
+      .subscribe(
         () => {
           translateService.setDefaultLang('en');
           translateService.use(

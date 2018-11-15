@@ -10,10 +10,10 @@ export class CapitalizeDirective {
       this.el.nativeElement,
       'innerHTML',
       capitalizeTransformer(value)
-    )
+    );
   }
 
-  constructor( 
+  constructor(
     private el: ElementRef,
     private renderer: Renderer
   ) { }

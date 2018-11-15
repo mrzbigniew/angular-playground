@@ -17,11 +17,8 @@
       "dom"
     ],
     "paths": {
-      "lib-kendo-grid": [
-        "dist/lib-kendo-grid"
-      ],
-      "lib-kendo-grid/*": [
-        "dist/lib-kendo-grid/*"
+      "@shared/*" : [
+        "src/app/shared/*"
       ]
     }
   }

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injector, Inject, ReflectiveInjector } from '@angular/core';
 import { DashboardService } from './dashboard.service';
+import { TestPipe } from 'src/app/shared/test-pipe/test.pipe';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,10 +11,13 @@ import { DashboardService } from './dashboard.service';
   ]
 })
 export class DashboardComponent implements OnInit {
-
   constructor(
-    private dashboardService: DashboardService
-  ) { }
+    private dashboardService: DashboardService,
+    private testPipe: TestPipe
+  ) {
+    const i = ReflectiveInjector.resolveAndCreate([TestPipe]);
+
+   }
 
   ngOnInit() {
   }

@@ -7,6 +7,7 @@ import { MatCardModule, MatButtonModule } from '@angular/material';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LibModule } from '../lib/lib.module';
 import { OnBoardingModule } from '../on-boarding/on-boarding.module';
+import { TestPipeModule } from '@shared/test-pipe/test-pipe.module';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { OnBoardingModule } from '../on-boarding/on-boarding.module';
     MatCardModule,
     MatButtonModule,
     TranslateModule.forChild({}),
-    OnBoardingModule
+    OnBoardingModule,
+    TestPipeModule
   ],
   declarations: [
     DashboardComponent

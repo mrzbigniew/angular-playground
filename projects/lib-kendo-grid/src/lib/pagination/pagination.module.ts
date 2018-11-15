@@ -12,7 +12,7 @@ import { MyPagerInfoComponent } from './pager-info/pager-info.component';
   ],
   declarations: [
     MyPaginationComponent,
-    MyPagerInfoComponent
+    MyPagerInfoComponent,
   ],
   exports: [
     MyPaginationComponent

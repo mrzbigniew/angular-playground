@@ -1,10 +1,10 @@
-import { PaginationModule } from './pagination.module';
+import { MyPaginationModule } from './pagination.module';
 
 describe('PaginationModule', () => {
-  let paginationModule: PaginationModule;
+  let paginationModule: MyPaginationModule;
 
   beforeEach(() => {
-    paginationModule = new PaginationModule();
+    paginationModule = new MyPaginationModule();
   });
 
   it('should create an instance', () => {
