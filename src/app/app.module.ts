@@ -3,6 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { TranslateLoaderInitializerModule } from '@shared/initializers/translate-loader-initializer/translate-loader-initializer.module';
+import { WebWorkerServiceModule } from '@shared/web-worker-service/web-worker-service.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,7 +13,8 @@ import { AppComponent } from './app.component';
     BrowserModule,
     BrowserAnimationsModule,
     TranslateLoaderInitializerModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    WebWorkerServiceModule
   ],
   providers: [],
   declarations: [

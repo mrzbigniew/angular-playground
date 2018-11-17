@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-multi-select-demo',
@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./multi-select-demo.component.scss']
 })
 export class MultiSelectDemoComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit() {

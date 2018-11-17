@@ -19,12 +19,6 @@
     "paths": {
       "@shared/*": [
         "src/app/shared/*"
-      ],
-      "components": [
-        "dist/components"
-      ],
-      "components/*": [
-        "dist/components/*"
       ]
     }
   }
