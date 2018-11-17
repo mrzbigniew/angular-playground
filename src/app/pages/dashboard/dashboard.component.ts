@@ -22,7 +22,8 @@ export class DashboardComponent implements OnInit, AfterViewInit {
       label: new Array(25).fill(null).map(
         // tslint:disable-next-line:no-bitwise
         () => String.fromCharCode((Math.random() * (200 - 0 + 1) + 0 << 0))
-      ).join('')
+      ).join(''),
+      value: i
     })
   );
 
@@ -36,6 +37,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   ) { }
 
   ngOnInit() {
+    this.data = this.array;
     this.sortWorker = this.webWorkerService.create<{ dir: string, arr: Array<{ label: string }> }, Array<{ label: string }>>(
       data => {
         const dir = data.dir;
@@ -53,10 +55,6 @@ export class DashboardComponent implements OnInit, AfterViewInit {
         )
       )
     );
-  }
-
-  itemIndex(index, elem) {
-    return `${elem.index}${elem.label}`;
   }
 
   ngAfterViewInit() {
@@ -85,18 +83,6 @@ export class DashboardComponent implements OnInit, AfterViewInit {
         tap(() => this.changeRef.detectChanges()),
         tap(() => window.scrollTo(0, 0))
       ).subscribe();
-    });
-  }
-
-  @HostListener('window:scroll', ['$event']) scrollHandler(event: any) {
-    this.zone.runOutsideAngular(() => {
-      const elem = this.lazyLoaderElement.nativeElement as HTMLElement;
-      if ((elem.offsetTop - 200) <= (window.scrollY + window.innerHeight)) {
-        this.fullData.splice(0, 10).forEach(
-          item => this.data.push(item)
-        );
-        this.changeRef.detectChanges();
-      }
     });
   }
 }

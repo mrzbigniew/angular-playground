@@ -1,9 +1,12 @@
 {{'LBL_DASHBOARD' | translate}}
 
 <input type="text" #input />
-<div class="results" *ngIf="data.length">
-  <div *ngFor="let d of data; trackBy:itemIndex">
-    {{d.label}}
+<div class="results" *ngIf="data">
+  <div [style.height]="'200px'">
+    <app-lazy-list [items]="data" [valueField]="'value'" [textField]="'label'">
+      <ng-template lazyListItemTemplate let-item>
+        <div>{{item}}</div>
+      </ng-template>
+    </app-lazy-list>
   </div>
-  <div #lazyLoader></div>
 </div>

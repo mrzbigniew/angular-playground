@@ -1,0 +1,10 @@
+<div class="lazy__list" #listItemsContainer>
+  <ng-container *ngIf="itemsToDisplay && itemsToDisplay.length">
+    <ng-container *ngFor="let item of itemsToDisplay; index as index, trackBy:trackItemBy">
+      <ng-container *ngTemplateOutlet="itemTemplate ? itemTemplate : defaultItemTemplate; context:{item: item, index: index, textField: textField, valueField: valueField}"></ng-container>
+    </ng-container>
+  </ng-container>
+</div>
+<ng-template #defaultItemTemplate let-item="item" let-valueField="valueField" let-textField="textField" let-index="index">
+  <div>{{textField ? item[textField] : item}}</div>
+</ng-template>0
