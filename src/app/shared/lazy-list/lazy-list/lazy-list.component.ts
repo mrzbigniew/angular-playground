@@ -1,9 +1,9 @@
 // tslint:disable-next-line:max-line-length
-import { Component, OnInit, Input, TemplateRef, OnChanges, ViewChild, ElementRef, AfterViewInit, SimpleChanges, NgZone, ChangeDetectorRef, OnDestroy, Renderer2 } from '@angular/core';
+import { Component, OnInit, Input, TemplateRef, ViewChild, ElementRef, AfterViewInit, NgZone, ChangeDetectorRef, OnDestroy } from '@angular/core';
+import { fromEvent, Subscription, pipe } from 'rxjs';
+import { map, tap } from 'rxjs/operators';
 
 import { LazyListItemTemplateDirective } from '../directives/lazy-list-item-template.directive';
-import { fromEvent, Subscription, pipe } from 'rxjs';
-import { map,  tap, debounceTime, throttleTime } from 'rxjs/operators';
 
 export type LazyListItem = string | { [key: string]: any };
 
@@ -19,30 +19,27 @@ export class LazyListComponent implements OnInit, AfterViewInit, OnDestroy {
   itemsToDisplay: LazyListItem[];
 
   @ViewChild(LazyListItemTemplateDirective, { read: TemplateRef }) itemTemplate: TemplateRef<any>;
-  @ViewChild('listItemsContainer') listItemsContainerElement: ElementRef<HTMLDivElement>;
+  @ViewChild('itemsListContainer') itemsListContainer: ElementRef<HTMLDivElement>;
 
   @Input() valueField: keyof LazyListItem;
   @Input() textField: keyof LazyListItem;
   @Input() initItemsCount = 100;
   @Input() lazyItemsChunkCount = 20;
-  @Input() trackItemBy = (i: number, e: LazyListItem) => `${this.textField ? e[this.textField] + e[this.valueField] : e}`;
+  @Input() trackItemBy = (i: number, e: LazyListItem) => btoa(JSON.stringify(e));
   @Input() set items(items: LazyListItem[]) {
     if (items) {
       this.allItems = items;
       this.itemsToDisplay = this.allItems.splice(0, this.initItemsCount);
-      this.listItemsContainerElement.nativeElement.scrollTo(0, 0);
+      this.scrollToTop();
     }
   }
 
-  constructor(private zone: NgZone,
-              private changeRef: ChangeDetectorRef,
-              private renderer: Renderer2
-  ) { }
+  constructor(private zone: NgZone, private changeRef: ChangeDetectorRef) { }
 
   private initLazyList() {
     this.zone.runOutsideAngular(() => {
       this.containerScrollSubscription = fromEvent<Event>(
-        this.listItemsContainerElement.nativeElement,
+        this.itemsListContainer.nativeElement,
         'scroll'
       ).pipe(
         map((event: any) => ({
@@ -53,7 +50,9 @@ export class LazyListComponent implements OnInit, AfterViewInit, OnDestroy {
         map(collectedData => collectedData.sH - 200 < collectedData.sT + collectedData.cH),
         tap(shouldLodChunks => shouldLodChunks ? this.addChunks() : null),
         tap(shouldLodChunks => shouldLodChunks ? this.changeRef.detectChanges() : null)
-      ).subscribe();
+      ).subscribe(
+        e => console.log(e, this.allItems.length)
+      );
     });
   }
 
@@ -61,6 +60,10 @@ export class LazyListComponent implements OnInit, AfterViewInit, OnDestroy {
     this.allItems.splice(0, this.lazyItemsChunkCount).forEach(
       item => this.itemsToDisplay.push(item)
     );
+  }
+
+  private scrollToTop() {
+    this.itemsListContainer.nativeElement.scrollTo(0, 0);
   }
 
   ngOnInit() {

@@ -1,0 +1,20 @@
+<div class="multi__select">
+  <div class="multi__select_container">
+    <div class="multi__select_values">
+    </div>
+    <div class="multi__select_input">
+      <input #filterField
+             tabindex="0"
+             [type]="'text'"
+             [placeholder]="''"
+             [value]="filterValue"
+             (focus)="focus.emit()"
+             (blur)="blur.emit()"
+             (keyup)="filterable ? filterChange.emit(filterField.value) : true"
+      >
+    </div>
+  </div>
+  <div class="multi__select_icon">
+    <i class="fa fa-close"></i>
+  </div>
+</div>

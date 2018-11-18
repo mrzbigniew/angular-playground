@@ -58,31 +58,31 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.zone.runOutsideAngular(() => {
-      fromEvent(this.inputText.nativeElement, 'keyup').pipe(
-        debounceTime(200),
-        distinctUntilChanged(),
-        map((event: any) => event.target.value),
-        flatMap(
-          value => this.filterWorker.postMessage({
-            value: value,
-            arr: this.array
-          })
-        ),
-        tap(
-          res => this.fullData = res.map(
-            (e, i) => ({
-              ...e,
-              index: i
-            })
-          )
-        ),
-        tap(
-          res => this.data = this.fullData.splice(0, 100)
-        ),
-        tap(() => this.changeRef.detectChanges()),
-        tap(() => window.scrollTo(0, 0))
-      ).subscribe();
-    });
+    // this.zone.runOutsideAngular(() => {
+    //   fromEvent(this.inputText.nativeElement, 'keyup').pipe(
+    //     debounceTime(200),
+    //     distinctUntilChanged(),
+    //     map((event: any) => event.target.value),
+    //     flatMap(
+    //       value => this.filterWorker.postMessage({
+    //         value: value,
+    //         arr: this.array
+    //       })
+    //     ),
+    //     tap(
+    //       res => this.fullData = res.map(
+    //         (e, i) => ({
+    //           ...e,
+    //           index: i
+    //         })
+    //       )
+    //     ),
+    //     tap(
+    //       res => this.data = this.fullData
+    //     )
+    //   ).subscribe(
+    //     () => this.changeRef.detectChanges()
+    //   );
+    // });
   }
 }
