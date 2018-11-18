@@ -7,6 +7,5 @@ export class LazyListItemTemplateDirective {
 
   constructor(
     public templateRef: TemplateRef<any>
-  ) { }
-
+  ) {}
 }

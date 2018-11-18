@@ -17,15 +17,24 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   data = [];
   fullData = [];
 
-  array = new Array(100000).fill(null).map(
-    (e, i) => ({
-      label: new Array(25).fill(null).map(
-        // tslint:disable-next-line:no-bitwise
-        () => String.fromCharCode((Math.random() * (200 - 0 + 1) + 0 << 0))
-      ).join(''),
-      value: i
+  // array = new Array(100000).fill(null).map(
+  //   (e, i) => ({
+  //     label: new Array(25).fill(null).map(
+  //       // tslint:disable-next-line:no-bitwise
+  //       () => String.fromCharCode((Math.random() * (200 - 0 + 1) + 0 << 0))
+  //     ).join(''),
+  //     value: i
+  //   })
+  // );
+
+  array = 'abcdefghijklmnoprstuwyz'.split('').map(
+    item => ({
+      label: item,
+      value: item
     })
   );
+
+  value = [];
 
   sortWorker: WebWorker<{ dir: string, arr: Array<{ label: string }> }, Array<{ label: string }>>;
   filterWorker: WebWorker<{ value: string, arr: Array<{ label: string }> }, Array<{ label: string }>>;
@@ -38,6 +47,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.data = this.array;
+    this.value = this.data.slice(0, 10);
     this.sortWorker = this.webWorkerService.create<{ dir: string, arr: Array<{ label: string }> }, Array<{ label: string }>>(
       data => {
         const dir = data.dir;

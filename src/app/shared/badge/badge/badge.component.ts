@@ -10,7 +10,7 @@ export enum BadgeClass {
   styleUrls: ['./badge.component.scss']
 })
 export class BadgeComponent implements OnInit {
-  @Input() badgeClass: BadgeClass.primary;
+  @Input() type: BadgeClass.primary;
 
   constructor() { }
 

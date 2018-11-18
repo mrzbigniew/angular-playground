@@ -1,20 +1,38 @@
-<div class="multi__select">
+<div class="multi__select" #multiSelectElement>
   <div class="multi__select_container">
     <div class="multi__select_values">
-    </div>
-    <div class="multi__select_input">
-      <input #filterField
-             tabindex="0"
-             [type]="'text'"
-             [placeholder]="''"
-             [value]="filterValue"
-             (focus)="focus.emit()"
-             (blur)="blur.emit()"
-             (keyup)="filterable ? filterChange.emit(filterField.value) : true"
-      >
+      <ng-container *ngFor="let item of value; trackBy:trackValueBy">
+        <app-badge class="m-1" [type]="'primary'">
+          <div class="multi__select_value">
+            <span class="multi__select_value--text">{{textField ? item[textField] : item}}</span>
+            <span class="multi__select_value--close-icon" (click)="removeValue(item)">
+              <i class="fa fa-close"></i>
+            </span>
+          </div>
+        </app-badge>
+      </ng-container>
+      <input #filterField class="multi__select_input" tabindex="0" [type]="'text'" [placeholder]="''" [value]="filterValue"
+        (focus)="focus.emit()" (blur)="blur.emit()" (keyup)="filterable ? filterChange.emit(filterField.value) : true"
+        (click)="isPopUpOpen = !isPopUpOpen">
+      <span class="multi__select_icon" *ngIf="closeIcon && value && value.length" (click)="clearValue()">
+        <i class="fa fa-close"></i>
+      </span>
     </div>
   </div>
-  <div class="multi__select_icon">
-    <i class="fa fa-close"></i>
-  </div>
+  <kendo-popup *ngIf="isPopUpOpen" [anchor]="multiSelectElement" #kendoPopupInstance [style.width]="multiSelectElement.clientWidth+'px'"
+    (open)="popUpOpen()" (close)="popUpClose()">
+    <app-lazy-list [items]="data" [valueField]="valueField" [textField]="textField">
+      <ng-template lazyListItemTemplate let-item="item" let-valueField="valueField" let-textField="textField" let-index="index">
+        <div>
+          <div [ngClass]="{
+              'multi__select_list_item': true,
+              'multi__select_list_item--selected': isSelected(item)
+            }"
+            (click)="handleListItemClick(item)">
+            {{ textField ? item[textField] : item }}
+          </div>
+        </div>
+      </ng-template>
+    </app-lazy-list>
+  </kendo-popup>
 </div>

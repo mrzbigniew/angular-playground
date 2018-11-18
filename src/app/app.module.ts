@@ -7,6 +7,8 @@ import { WebWorkerServiceModule } from '@shared/web-worker-service/web-worker-se
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { PopupModule } from '@progress/kendo-angular-popup';
+
 
 @NgModule({
   imports: [
@@ -14,7 +16,8 @@ import { AppComponent } from './app.component';
     BrowserAnimationsModule,
     TranslateLoaderInitializerModule.forRoot(),
     AppRoutingModule,
-    WebWorkerServiceModule
+    WebWorkerServiceModule,
+    PopupModule
   ],
   providers: [],
   declarations: [

@@ -7,6 +7,7 @@ import { MultiSelectModule } from '@shared/multi-select/multi-select.module';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { DashboardComponent } from './dashboard.component';
     DashboardRoutingModule,
     TranslateModule.forChild(),
     MultiSelectModule,
-    LazyListModule
+    LazyListModule,
+    FormsModule
   ]
 })
 export class DashboardModule { }
